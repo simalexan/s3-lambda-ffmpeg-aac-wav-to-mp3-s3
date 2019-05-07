@@ -16,6 +16,7 @@ This is a serverless component that takes uploaded AAC, WAV audio files from one
 This component has one CloudFormation deployment parameter:
 
 - `ConversionTimeout`, an optional parameter, represents the timeout of the Conversion Lambda function. By default it's 180 seconds.
+- `QualityLevel`, a required parameter, represents the quality level for the output MP3. Its a range 0-9. By default it's 9 -> maximum quality.
 
 ## Latest Release - 1.0.0
 

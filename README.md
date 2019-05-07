@@ -1,15 +1,15 @@
 
-# S3 Bucket -> Lambda (FFMPEG Convert MOV to MP4) -> S3 Bucket
+# S3 Bucket -> Lambda (FFMPEG Convert AAC,WAV to MP3) -> S3 Bucket
 
 ## Description
 
-This is a serverless component that takes uploaded MOV video files from one S3 Bucket, then using FFMPEG Lambda Layer converts them to MP4 and uploads to another S3 Bucket. It contains:
+This is a serverless component that takes uploaded AAC, WAV audio files from one S3 Bucket, then using FFMPEG Lambda Layer converts them to MP3 and uploads to another S3 Bucket. It contains:
 
-- an Input S3 Bucket that accepts MOV video files.
+- an Input S3 Bucket that accepts WAV,AAC audio files.
 
-- a Lambda that takes the MOV video file from the Input S3 bucket, converts it to a MP4 one and uploads it to the Output bucket
+- a Lambda that takes the WAV/AAC audio file from the Input S3 bucket, converts it to a MP3 one and uploads it to the Output bucket
 
-- an Output S3 Bucket that receives MP4 files.
+- an Output S3 Bucket that receives MP3 files.
 
 ## Deployment Parameters
 

@@ -6,16 +6,17 @@ Parameters:
     Type: Number
     Default: 180
   QualityLevel:
-    Type: Number
+    Type: String
     Default: 9
     Description: 'The level of quality for your mp3 file, 0-9'
+    AllowedPattern: '[0-9]'
   InputS3BucketName:
     Type: String
-    Default: 's3-lambda-sox-input-aac-wav-bucket'
+    Default: 's3-lambda-ffmpeg-input-aac-wav-bucket'
     MinLength: 3
   OutputS3BucketName:
     Type: String
-    Default: 's3-lambda-sox-output-mp3-bucket'
+    Default: 's3-lambda-ffmpeg-output-mp3-bucket'
     MinLength: 3
 Resources:
   InputS3Bucket:
@@ -41,7 +42,7 @@ Resources:
         Variables:
           OUTPUT_BUCKET: !Ref OutputS3Bucket
           EXTENSION: '.mp3'
-          QUALITY_LEVEL: QualityLevel
+          QUALITY_LEVEL: !Ref QualityLevel
           MIME_TYPE: 'audio/mpeg'
       Events:
         FileUpload:

@@ -18,6 +18,8 @@ exports.handler = function (eventObject, context) {
 		outputFile = path.join(workdir, 'converted-' + id + EXTENSION),
 		qualityScale = !isNaN(QUALITY_SCALE) ? (QUALITY_SCALE > 9 ? 9 : QUALITY_SCALE) : 9;
 
+		console.log(qualityScale)
+
 
 	console.log('converting', inputBucket, key, 'using', inputFile);
 	return s3Util.downloadFileFromS3(inputBucket, key, inputFile)
